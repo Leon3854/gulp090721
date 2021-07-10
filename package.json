@@ -1,0 +1,22 @@
+{
+  "name": "gulplesson09072021",
+  "version": "1.0.0",
+  "description": "gulp instalation with package for my projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leon3854/gulp090721.git"
+  },
+  "author": "Leon3854",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leon3854/gulp090721/issues"
+  },
+  "homepage": "https://github.com/Leon3854/gulp090721#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
