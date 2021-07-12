@@ -7,7 +7,7 @@ const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
-const fonter = require('gulp-fonter');
+// const fonter = require('gulp-fonter'); временно отключаю так как выдаёт ошибки при установке пакета
 
 function browsersync() { // название функции не должно полностью совпадать с названием константы 
   browserSync.init({
@@ -73,6 +73,13 @@ function fonts() {
   pipe(dest('./dist'))
 }
 
+function fontcopy() {
+  return src([
+    'app/fonts/**/*'
+  ], {base: 'app/'})
+  .pipe(dest('dist'))
+}
+
 function build() {
   return src([
     'app/css/style.min.css',
@@ -95,8 +102,9 @@ exports.watching = watching;
 exports.browsersync = browsersync;
 exports.scripts = scripts;
 exports.images = images;
-exports.fonts = fonts;
+exports.fontcopy = fontcopy;
+//exports.fonts = fonts; // отключено так как пока проблемы у самого пакета
 exports.cleanDist = cleanDist;
 
-exports.build = series(cleanDist, images, build, fonts);
+exports.build = series(cleanDist, images, build, fontcopy);  // fonts - вынесенно пока
 exports.default = parallel(browsersync, watching, scripts, styles);
