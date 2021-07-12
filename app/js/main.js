@@ -1,1 +1,4 @@
-console.log('Hi!');
+$ (function () {
+  $('.container').hide();
+  console.log('Hi');
+})

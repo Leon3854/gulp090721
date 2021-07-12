@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-size: 16px;
+  padding: 0 15px;
+  background-color: tomato;
+}
+
+.container {
+  display: flex;
+  max-width: 1240px;
+  margin: 0 auto;
+  h1 {
+    text-align: center;
+  }
+}
